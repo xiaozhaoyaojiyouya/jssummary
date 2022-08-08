@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量</title>
+<script>
+    //1、定义：变量是一个盒子，或容器
+
+    //2、声明了一个age的变量
+    var age
+    // 变量赋值
+    age = 10//把右边的值赋值给左边
+    console.log(age)
+     //变量的初始化  常用
+    var myName = '小赵'
+
+    //3、变量例子
+    //1.用户输入年龄  存储到一个age2的变量里面
+   var age2 = prompt('请输入你的年龄')//18
+   //输出
+   alert(age2)//18
+
+   //4、给一个变量重新赋值，更新变量
+   var age3 = 18
+   age3 = 22
+   console.log(age3) //22
+
+   //一个var可以有多个变量名
+    var age4 = 18
+        myName = '小赵 '
+    //特殊
+    var sex
+    console.log(sex) //undefined
+</script>    
+</head>
+<body>
+    <p>变量是一个盒子，或容器</p>
+    <p>声明变量  <var> </p>
+</body>
+</html>
