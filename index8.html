@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+    <script>
+        //数组（Aeeay):就是一 组数据的集合 存储在单个变量下的优雅方式
+        //利用new关键字创建数组
+        var arr = new Array()
+        //利用数组字面创建数组[]
+        var arr1 =[]
+        var arr2 = [1,2,3]
+        //数组的索引 数组名[索引号]
+        arr2[2]
+        console.log(arr2[2])
+        //遍历
+        for(var i = 0; i<3;i++){
+            console.log(arr2[i])
+        }
+        for(var i = 0; i<arr2.length ;i++){
+            console.log(arr2[i])
+        }
+        are = 0
+        sum = 0
+        var arr3 =[2,6,17,4]
+        for(i=0;i<arr3.length;i++){
+            sum+=arr3[i]
+        }
+        arr3=sum/arr3.length
+        console.log(sum)
+        
+        var arr4 = [2,6,1,77,52,25,7]
+        var sum1 =arr4[0]
+        for(var i=0; i<arr4.length; i++){
+            if (arr4[i]<arr4[i+1]){
+                sum1 =arr4[i+1]
+            }
+        }
+        console.log('最大值是:'+sum1+'')
+
+        var arr5 =['red','green','blue','pink','purple','hotpink']
+        var newArr = []
+        for(var i=arr5.length;i>=0;i++){
+            newArr[newArr.length] = arr5[i]
+        }
+        console.log(newArr)
+        冒泡
+        var arr6 =[5,4,3,2,1]
+        for(var i=0;i<=arr6.length-1;i++){
+            for(j=1;j<=arr6.length-i;j++){
+                if(arr6[j]>arr6[j+1]){
+                    var temp =arr6[j]
+                    arr6[6] = arr6[j+1]
+                    arr6[j+1] = temp
+                }
+            }
+        }
+        console.log(arr6)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
