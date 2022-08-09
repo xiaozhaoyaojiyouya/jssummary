@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型</title>
+    <script>
+        //1.Number 变量的类型是由js 根据=右边变量值的数据类型来判断
+        var age = 10 //数字类型number
+        var areYouOk ='是的'//字符串类型string
+        //输出小赵
+        var x = 10
+        x = '小赵'
+        //最大值
+        console.log(Number.MAX_VALUE)
+        //最小值
+        console.log(Number.MIN_VALUE)
+        //无穷大
+        console.log(Number.MAX_VALUE*2)//Infinity
+       //无穷小
+        console.log(-Number.MAX_VALUE*2)//-Infinity
+        //fenfen
+       console.log('myName' +100)//nan
+       //isNaN()这个方法用来判断是否是非数值
+       console.log(isNaN(12))//false
+       console.log(isNaN('z'))//true
+
+       //2.String 双引号和单引号
+       //取length的属性
+        var str = 'sjskcnjscn'
+        console.log(str.length)//10
+        //+拼接
+        console.log('小'+'赵')//小赵
+        //变量顶替
+         var age = 18
+        console.log('小'+'赵' +age)//小赵18 引引加加：删掉数字，变量写加中间
+        //案例 重要
+        var age1 = prompt('你多少岁？')
+        var str1 ='您今年'+age1+'岁'
+        alert(str1)
+
+        //3.boolean类型
+        // false是0
+        // true是1
+
+        //4、undefined
+        var str
+        console.log(str)//undefined
+
+        var variable =undefined
+        console.log(variable + 'xiaozhao')//variablexiaozhao
+        console.log(variable + 1)//NaN
+
+        // typeo判定类型
+        var num = 10 
+        console.log(typeof num)//number
+        var str2 = 'xiao'
+        console.log(typeof str2)//string
+        var flag = true
+        console.log(typeof flag)//Boolean
+        var vari = true
+        console.log(typeof vari)//undefined
+        var timer = null
+        console.log(typeof timer)//object
+
+        //转换数据类型
+        //转换字符串型 变量.toSting()
+        var num = 10
+        var str =num.toString()
+        //利用string
+        console.log(String(num))
+        //利用+链接
+
+        // parseInt(变量)字符串转数字  整形
+        // parseFloat(变量)字符串转数字 浮点数
+        //利用number（）
+        //-
+        var year = prompt('你的出生日期')
+        var age4 = 2022-23
+        alert('你的年龄已经' +age4 +'岁')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
