@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js对象</title>
+    <script>
+        //对象定义：具体的一个事物
+        // 对象是由属性和方法组成的
+        /*
+           属性：事物的特征，在对象中用属性来表示（常用名词）手机大小，颜色，尺寸和厚度
+           方法：事物的行为，在对象中使用方法来表示（常用动词）手机打电话，发信息，玩游戏
+
+        */
+       //为什么需要对象：保存一个值时，可以使用变量，保存多个值
+    //    字面量创建对象
+    // var obj ={}创建了一个空的对象
+    var obj = {
+        uname: '小赵',
+        age: 18 ,
+        sex: '女',
+        sayHi: function(){
+            console.log('hi')
+        }
+    }
+    // (1) 里面的属性或方法我们采取键值对的形式  链  属性名： 值 属性值
+    // (2) 多个属性或者方法中间用逗号隔开的
+    // (3) 方法冒号后面跟的是一个匿名函数
+    // 2.使用对象
+    // (1) 调用对象的属性  我们采取  对象名.属性名(. 我们理解为'的')
+    console.log(obj.uname)
+    // (2)调用属性还有一种方法  对象名['属性名']
+    console.log(obj['age'])
+    // (3)调用对象的方法sayHi 对象名.方法名（）
+    obj.sayHi()
+   
+    // 3,变量 属性 函数 方法的区别
+    // 变量和属性的相同的 他们都是用来存储数据的
+    //变量：单独声明赋值，单独存在
+    // 属性：对象里面的变量称为属性，不需要声明，用来描述该对象的特征
+    //    函数：单独存在，通过“函数名（）”的方式就可以调用
+    // 方法：对象里面的函数称为方法，方法不需要声明，使用“对象.方法名()的方式就可以调用，方法用来，描述该对象的行为和功能
+   
+    // 4.利用new object创建对象
+    var obj = new Object()//创建了一个空的对象
+    obj.uname = '张三丰';
+    obj.age = '18';
+    obj.sex ='女';
+    obj.sayHi = function(){
+    console.log('hi')
+    }
+
+    // 5，为什么我们需要构造函数
+    // 因为我们一次创建一个对象，里面很多的属性和方法是大量相同的，我们只能复制
+    // 因此我们可以利用函数的方法，重复这些相同的代码 我们就把这个函数称为 构造函数
+    // 又因为这个函数不一样，里面封装的不是普通代码 而是对象
+    // 构造函数 就是把我们对象里面一些相同的属性和方法抽象出来封装到函数里面
+
+    // 我吗创建四大天王的对象：相同的属性：名字 年龄 性别 方法：唱歌
+    // 构造函数的语句格式
+    function 构造函数名(){
+        this.属性 = 值;
+        this.方法 =function(){}
+
+    }
+    // 调用构造函数
+    // 构造函数 抽象了对象的公共部分，封装到了函数里面，它泛指某一大类（class）
+    // 创建对象。特指某一个，通过new关键字创建对象的过程我们也称为对象实例化
+    new 构造函数名();
+
+     function Star(uname1,age1,sex1){
+        this.name = uname1;
+        this.age =age1;
+        this.sex =sex1;
+        this.sing =function(sang){
+            console.lg(sang)
+
+        }
+
+     }
+     var ldy =new Star('刘德华',18,'男')//调用函数返回的是一个对象object
+     console.log(ldy.name)
+     console.log(ldy['age'])
+     ldy.sing('冰雨')
+     var zxy =new Star('张学友',18,'男')
+     console.log(zxy.name)
+     console.log(zxy['age'])
+     zxy.sing('无所谓')
+
+
+    //  构造函数名字首字母要大写
+    // 我们构造函数不需要return 就可以返回结果
+    // 6.new关键字              
+    // new在执行会做四件事情：                        new和构造函数确定了眼神
+    // 在内存中创建一个新的空对象                       他们两个生了一个宝宝
+    // 让this指向这个新的对象                          这个宝宝必须是亲生的this指向
+    // 执行构造函数里面的代码，给这个新对象              教孩子读书一肚子墨水
+    // 返回这个新对象（所以构造函数里面不需要return）    长大后挣钱回报父母
+
+    // 7，遍历对象  对象遍历最好用for  in
+    fpr(变量  in 对象 )
+    var obj ={
+        name2:'小赵',
+        age3:18,
+        sex3:'女'
+    }
+    // console.log(obj.name2)
+    // console.log(obj.age3)
+    // console.log(obj.sex3) 
+    for(var key in obj){
+        console.log(key)//只写变量  得到的是属性 name3 age3 sex3
+        console.log(obj[key])//得到的是属性值
+    }
+
+    // 我们使用for  in 里面的变量  我们喜欢写k  或者key
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
