@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开关</title>
+    <style>
+        .op{
+            background-color:aliceblue
+        }
+        .ov{
+            background-color: black;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <button>开关</button>
+    <script>
+        // 事件源
+        var btn = document.querySelector('button')
+        var body =document.body//这个和html一样特殊
+        var flay = 0
+        // 事件类型      事件处理程序
+        btn.onclick = function (){
+            if(flay == 0){
+                // console.log('开灯')
+               body.className = 'op'
+               flay = 1
+            }else{
+            //    console.log('关灯')
+               body.className = 'ov'
+               flay = 0
+            }
+        }
+    </script>
+</body>
+</html>
