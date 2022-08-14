@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐藏</title>
+    <style></style>
+</head>
+<body>
+    <input type="text" value="邮箱/id/手机号">
+    <script>
+        //事件源
+        var text =document.querySelector('input')
+        // 事件类型   事件处理程序
+        text.onfocus =function(){
+            if(text.value==='邮箱/id/手机号'){
+                    text.value=''
+             }
+        }
+        text.onblur =function(){
+            if(text.value ===''){
+                text.value = '邮箱/id/手机号'
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
