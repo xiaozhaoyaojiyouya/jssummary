@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关闭广告</title>
+    <style>
+        .del{
+            display: none;
+            /* 隐藏属性 */
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="关闭">
+    <div>假装这是一张广告图</div>
+    <script>
+        var btn = document.querySelector('input')
+        var div = document.querySelector('div')
+
+        btn.onclick = function(){
+            btn.className = 'del'
+            div.className = 'del'
+        }
+    </script>
+    
+</body>
+</html>
