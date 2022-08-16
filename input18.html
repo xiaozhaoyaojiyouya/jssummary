@@ -1,0 +1,211 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排他思想</title>
+ </head>
+ <body>
+    <!-- 排他思想  先干掉被人 留下自己 -->
+    <div>
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <button>按钮4</button>
+        <button>按钮5</button>
+    </div>
+    <script>
+        var btns =document.getElementsByTagName('button')
+        for(var i =0;i<btns.length;i++){
+            btns[i].onclick = function(){
+                // 这里是干掉他人
+                for(var i=0;i<btns.length;i++){
+                    btns[i].style.backgroundColor = ''
+            }
+               //留下自己
+                this.style.backgroundColor = 'pink'
+            }
+        }
+
+        
+    </script>
+    <!--        案例二       -->
+
+                <!-- document.body.style.....= '你好' 引用document-->
+
+                <!-- 案例三 onmouseover鼠标经过   onmouseout鼠标移开  -->
+     <style>
+           .ty {
+                    background-color: aquamarine;
+                 }
+     </style>   
+
+        <table>
+            <thead>
+                <tr>
+                    <th>代码</th>
+                    <th>名称</th>
+                    <th>最新公布净值</th>
+                    <th>前单位净值</th>
+                    <th>累计净值</th>
+                    <th>净值增长率</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>003526</td>
+                    <td>开发债卷</td>
+                    <td>1.075</td>
+                    <td>1.074</td>
+                    <td>1.074</td>
+                    <td>+0.047%</td>
+                    
+                </tr>
+                <tr>
+                    <td>003526</td>
+                    <td>开发债卷</td>
+                    <td>1.075</td>
+                    <td>1.074</td>
+                    <td>1.074</td>
+                    <td>+0.047%</td>
+                    
+                </tr>
+                <tr>
+                    <td>003526</td>
+                    <td>开发债卷</td>
+                    <td>1.075</td>
+                    <td>1.074</td>
+                    <td>1.074</td>
+                    <td>+0.047%</td>
+                    
+                </tr>
+                <tr>
+                    <td>003526</td>
+                    <td>开发债卷</td>
+                    <td>1.075</td>
+                    <td>1.074</td>
+                    <td>1.074</td>
+                    <td>+0.047%</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            
+            var trs =document.querySelector('tbody').querySelectorAll('tr')
+            for(var i=0;i<trs.length;i++){
+                trs[i].onmouseover = function(){
+                    //console.log(11)
+                    this.className = 'ty'
+                }
+                trs[i].onmouseout =function(){
+                    this.className =''
+                }
+            }
+        </script>
+                           <!-- 复选框按钮 -->
+        <style>
+            .tht{
+                background-color: cornflowerblue;
+                text-align: center;
+            }
+
+        </style>
+        <table>
+            <thead>
+                <tr class="tht">
+                    <th><input type="checkbox" id="j_cbA11"></th>
+                    <th>商品</th>
+                    <th>价格</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>iphone13</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>华为</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>oppo</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>小米</td>
+                    <td>8000</td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            var j_cbA11 =document.getElementById('j_cbA11')
+            var j_tb =document.getElementById('j_tb').getElementsByTagName('input')
+            //事件类型
+            j_cbA11.onclick = function(){
+                // this.checked可以得到复选框的选中状态  如果true 就选中，如果false  就未选中
+                console.log(this.checked)
+                for(var i=0;i<j_tb.length;i++){
+                    j_tb[i].checked =this.checked
+                }
+
+            }
+            for(var i=0;i<j_tb.length;i++){
+                j_tb[i].onclick = function(){
+                    for(var i=0;i<j_tb.length;i++){
+                    j_cbA11.checked = j_tb[i].checked
+                    }
+
+                }
+            }
+        </script>
+
+<!-- element.属性 获取元素的属性值   
+element.getAttribute('属性') 获取元素的属性值 -->
+<!-- element.属性 = '' 设置元素的属性值   
+element.setAttribute('属性'，值) 获取元素的属性值 -->
+<!--  
+element.removeAttribute('属性') 移动元素的属性值 -->
+<style>
+    .hs{
+        background-color: brown;
+    }
+    .yc{
+        display: none;
+    }
+</style>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th class="hs">产品介绍</th>
+                <th>规格与包装</th>
+                <th>售后保障</th>
+                <th>商品评价</th>
+                <th>手机社区</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="yc">
+    
+        <div style="display: block;">
+            商品介绍模块内容
+        </div>
+        <div>
+            规格与包装模块内容
+        </div>
+        <div>售后服务模块内容
+        </div>
+        <div>商品评价模块内容
+        </div>
+        <div>商品介绍模块内容
+        </div>
+    </div>
+</div>
+ </body>
+ </html>
