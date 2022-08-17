@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除孩子节点</title>
+</head>
+<body>
+    <button>删除</button>
+    <ul>
+        <li>下达</li>
+        <li>发送</li>
+        <li>转发</li>
+    </ul>
+    <script>
+        // 获取元素
+        var ul =document.querySelector('ul')
+        var button1 = document.querySelector('button')
+        // 点击按钮依次删除里面的孩子
+        button1.onclick = function(){
+            if(ul.children ==0){
+                this.disabled = true //停用
+            }else{
+            console.log(ul.removeChild(ul.children[0]))
+            }
+        }
+    </script>
+
+</body>
+</html>
