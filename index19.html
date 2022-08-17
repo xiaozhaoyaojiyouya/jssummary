@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点总结</title>
+</head>
+<body>
+    <div class="box">
+        <span class="erweima">x</span>
+    </div>
+    <script>
+        //一个节点至少拥有node type（节点类型） nodeName（节点名称） nodevalue（节点值）
+        // 元素节点node type 为1
+        // 属性为2
+        // 文本节点为3
+        // 父节点 parentNode
+        var erweima = document.querySelector('.erweima')
+        // var box =document.querySelector('.box')
+        console.log(erweima.parentNode)
+        // 子节点
+        var box =document.querySelector('.erweima')
+        // 子节点包含了childNodes 所有的子节点 包含  元素节点  文本节点等等
+        console.log(box.childNodes)
+        // 获取所有的元素节点，也是我们实际开发常用的
+        console.log(box.children)
+    </script>
+    <div></div>
+    <ol>
+        <li>我</li>
+        <li>是</li>
+        <li>小</li>
+        <li>赵</li>
+    </ol>
+    <script>
+        var ol = document.querySelector('ol')
+        //第一个子节点 不管是文本节点还是元素节点 
+        console.log(ol.firstChild)//#text
+        console.log(ol.lastChild)
+        console.log(ol.firstElementChild)
+        console.log(ol.lastElementChild)
+        console.log(ol.children[0])
+        console.log(ol.children[3])
+        var div =document.querySelector('div')
+        // nextSibling得到下一个
+        console.log(div.nextSibling)//#text
+        console.log(div.previousSibling)
+        // nextElementSibling得到下一个兄弟元素节点
+        console.log(div.nextElementSibling)
+        console.log(div.previousElementSibling)
+    </script>    
+          <ul></ul>
+    <script>
+            //创建节点元素节点
+            var li = document.createElement('li')
+            // 添加节点 node.appendChild(child)  node 父级   child是子级 后面追加元素  类似数组中的push
+            var ul = document.querySelector('ul')
+            ul.appendChild(li)
+            // 添加节点 node.insertBefore(child,指定元素)
+            var lili = document.createElement(li)
+            ul.insertBefore(lili,ul.children[0])
+            // 我们需要添加一个新的元素：1创建元素  2，添加元素
+    
+    </script>
+    <textarea name="" id="">123</textarea>
+    <button>发布</button>
+    <ul>
+
+    </ul>
+    <script>
+        // 获取元素
+        var btn =document.querySelector('button')
+        var text =document.querySelector('textarea')
+        var ul = document.querySelector('ul')
+        // 注册事件
+        btn.onclick = function(){
+            // (1)创建元素
+            // var li = document.createElement('li')
+            // (2)添加元素
+            // ul.appendChild(li)
+            if(text.value == ''){
+                alert('你没有输入内容')
+                return false
+            }
+            else{
+                // (1)创建元素 
+               var li = document.createElement('li')
+            //    先有li 才能赋值
+            li.innerHTML = text.value
+            // (2)添加元素
+            //    ul.appendChild(li)
+            ul.insertBefore(li,ul.children[0])
+            }
+
+        }
+        
+    </script>
+    <button>删除</button>
+    <ul>
+        <li>下达</li>
+        <li>发送</li>
+        <li>转发</li>
+    </ul>
+    <script>
+        // 获取元素
+        var ul =document.querySelector('ul')
+        var button1 = document.querySelector('button')
+        // 点击按钮依次删除里面的孩子
+        button1.onclick = function(){
+            if(ul.children ==0){
+                this.disabled = true //停用
+            }else{
+            console.log(ul.removeChild(ul.children[0]))
+            }
+            // onde.removeChild(child)删除与
+            // javascript:;阻止跳转
+            // <a href="javascript:;"></a>
+        }
+        // 总结
+        // child.parentNode父节点
+        // node.childNode子节点
+        // node.children多行子元素
+        // node.appendChild(Child)添加
+        // node.insertBefore(Child)添加具体
+        // Node.removeChild()删除
+        // node.cloneNode()复制
+    </script>
+</body>
+</html>
