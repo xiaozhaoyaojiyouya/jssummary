@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三种动态创建元素的方法</title>
+</head>
+<body>
+    <button>按钮</button>
+    <div>1234</div>
+    <script>
+        var btn = document.querySelector('button')
+        btn.onclick = function(){
+            document.write('<div>123</div>')
+        }
+        // 块在数组情况下
+        var inner = document.querySelector('.inner')
+        for(var i =0;i <= 100;i++){
+          inner.innerHTML+='<a href=#>百度</a>'
+        }
+        // 慢  
+        var crea = document.querySelector('.crea')
+        for(var i =0;i <= 100;i++){
+        var a =document.createElement('a')
+            create.appendChild(a)
+        }
+
+        function fn(){
+            var d1 = +new Date()
+            var array = []
+            for(var i =0; i<1000;i++){
+                array.push('div style="width:100px;heigh:2px;border:1px solid blue;"</div>')
+            }
+        }
+    </script>
+    
+</body>
+</html>
