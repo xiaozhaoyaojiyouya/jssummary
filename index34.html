@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mousemove给鼠标设置图标</title>
+    <style>
+        img{
+            position: absolute;
+            top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <img src="。。。。">
+    <script>
+        // mousemove 只是我们鼠标移动1px  就会触发这个事件
+        // 核心原理：每次鼠标移动，我们都会获得最新的鼠标坐标，把这个x和y坐标作为图片的top和left值
+        var pic =document.querySelector('img')
+        document.addEventListener('mousemove',function(e){
+            var x = e.pageX
+            var y = e.pageY
+            pic.style.left = x +'px'
+            pic.style.top = y +'px'
+        })
+    </script>
+    
+</body>
+</html>
