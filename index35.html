@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘事件和事件对象</title>
+</head>
+<body>
+    <script>
+        // 1，keyup按下弹起的时候触发
+        document.addEventListener('keyup',function(){
+            console.log('我弹起来了')
+        })
+        // keydown 按键按下的时候触发
+        document.addEventListener('keydown',function(){
+            console.log('我按下了')
+        })
+        // keypress 按键按下的时候触发  不能识别功能键  比如CTRL shift
+        document.addEventListener('keypress',function(){
+            console.log('我按下了press')
+        })
+
+        // 事件对象keyCode属性可以得到相应的ASCII码值
+        // 1，我们的keyup和keydown事件不去分字母大小写 
+        // 2，我们keypress 事件 区分大小写
+        document.addEventListener('keyup',function(e){
+            console.log(e.keyCode)
+            // w
+        })
+        document.addEventListener('keypress',function(e){
+            console.log(e.keyCode)
+        })
+    </script>
+    
+</body>
+</html>
