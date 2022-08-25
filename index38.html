@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立即执行函数</title>
+    <style>
+        div{
+            width: 100px;
+            height: 150px;
+            background-color: pink;
+            border: 10px solid red;
+            padding: 20px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>我i降低反思和南方国家三等奖fig进度跟进女差距iu女efhsdfsdfusdhfguais生的歌i对方那边v地方女方v南方的是的封建士大夫</div>
+    <script>
+        function fn() {
+            console.log(1)
+        }
+        fn()
+// 立即执行函数：不需要调用，立马能够自己执行函数
+        // ( function() {})()或(function (){}())
+        //写法1
+        (function(a,b) {
+            console.log(a+b);
+        })(1,2)//第二个小括号可以看做是做调用函数
+        // 写法2
+        (function(a,b) {
+            console.log(a+b);
+        }(1,2))
+    </script>
+    <script>
+        var div = document.querySelector('div')
+        console.log(div.scrollHeight)//内容的大小
+        console.log(div.clientHeight)
+        div.addEventListener('scroll',function(){
+            console.log(div.scrollTop)
+        })
+    </script>
+</body>
+</html>
