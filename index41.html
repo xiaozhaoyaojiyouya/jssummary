@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缓动动漫公式</title>
+    <style>
+        /* 缓动动漫公式=(目标值-现在的位置)/10 */
+        /* 匀速动画  就是  盒子是当前的位置 +固定的值 10 */
+        /* 缓动动画就是  盒子当前的位置 + 变化的值（目标值 -现在的位置）/10 */
+      
+        div{
+            position: absolute;/* 一定要有定位 一般是绝对*/
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            z-index: 2;
+        }
+        span{
+            position: absolute;/* 一定要有定位 一般是绝对*/
+            left: 0;
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+   
+    </style>
+</head>
+<body>
+    <button class="btn500">点击让夏雨荷走500</button>
+    <button class="btn800">点击让夏雨荷走800</button>
+    <!-- <div></div> -->
+    <span>夏雨荷</span>
+    <script>
+    function animate(obj,target){     
+        // 解决方法 让我们元素只有一个定时器
+        clearInterval(obj.timer)
+        obj.timer = setInterval(function(){
+            // 步长值写道定时器的里面  缓动动漫公式=(目标值-现在的位置)/10 
+            var step =Math.ceil((target - obj.offsetLeft) / 10)
+             if(obj.offsetLeft==target){
+            // 停止动漫  本质是停止定时器
+            clearInterval(obj.timer)
+         }
+         obj.style.left =obj.offsetLeft +step +'px'
+    },15)
+
+    }
+    // var div =document.querySelector('div')
+    var span =document.querySelector('span')
+    var btn500 =document.querySelector('.btn500')
+    var btn800 =document.querySelector('.btn800')
+    
+    //函数调用
+    // animate(div,300)
+    btn500.addEventListener('click',function(){ 
+        animate(span,500)
+    })
+    btn800.addEventListener('click',function(){ 
+        animate(span,800)
+    })
+       
+    
+    
+</script>
+</body>
+</html>
